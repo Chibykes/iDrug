@@ -1,0 +1,44 @@
+<div class="nav d-md-block d-none col-lg-4">
+    <div class="col-9 mx-auto position-sticky top-0">
+        <img
+            class="d-block mx-auto pb-4" 
+            {{#if logo2}}
+                src="/img/logo2.svg"
+                style="width: 100px"
+                {{else}}
+                src="/img/logo3.svg"
+                style="transform: scale(.8);"
+            {{/if}}
+            alt=""
+        >
+
+        <div class="sidebar shadow-lg">
+            <ul class="pt-5 bg-white">
+                <li>
+                    <a class="{{#is title '==' 'Dashboard'}}active{{/is}}" href="/admin/dashboard">
+                        <i class="fas fa-stream"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                {{!-- <li>
+                    <a class="{{#is title '==' 'Pharmacies'}}active{{/is}}" href="/admin/pharmacies">
+                        <i class="fas fa-first-aid"></i>
+                        <span>Pharmacies</span>
+                    </a>
+                </li> --}}
+                <li>
+                    <a class="{{#is title '==' 'Drugs'}}active{{/is}}" href="/admin/drugs">
+                        <i class="fas fa-box"></i>
+                        <span>Drugs</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="{{#is title '==' 'Reports'}}active{{/is}}" href="/admin/reports">
+                        <i class="fas fa-thermometer-quarter"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
