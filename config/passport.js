@@ -41,7 +41,7 @@ module.exports = (passport) => {
 
 
     passport.serializeUser((admin, done)=>{
-        return done(null, admin.adminID);
+        return done(null, admin._id);
     });
 
     passport.deserializeUser((id, done)=>{
