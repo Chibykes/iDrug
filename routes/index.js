@@ -14,14 +14,16 @@ app.post('/auth-pin', async(req, res)=>{
     let { authPin } = req.body;
     authPin = authPin.replace(/-/ig, '').trim();
 
-    const drug = await Drugs.findOne({ authPin });
+    let drug = await Drugs.findOne({ authPin });
+    req.flash('successToast', 'Drug Found!!!');
+    
     if(!drug) {
-        req.flash('errorToast', 'Drug Not Found!!!');
-        return res.redirect('/');
+        drug = [];
+        req.flash('successToast', '');
+        req.flash('errorToast', 'Drug Found!!!');
     };
     
     
-    req.flash('successToast', 'Drug Found!!!');
     res.render('auth-pin', {
         title: drug.name,
         drug,
