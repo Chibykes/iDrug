@@ -53,8 +53,16 @@ form div.form-box{
 
 form input,form button{
     padding: 12px 20px;
-    border: 1px solid var(--main-col);
-    border-radius: 50px;
+    border: 2px solid #a1a1a1;
+    border-radius: 5px;
+}
+
+form button{
+    border: none;
+}
+
+form input:focus{
+    outline: 2px solid #1183bc3f;
 }
 
 form button{
@@ -328,4 +336,21 @@ td[colspan]{
 
 a[class="filepond--credits"]{
     visibility: hidden;
+}
+
+.table.reports{
+    counter-reset: report;
+}
+
+p.sn::after{
+    width: 15px;
+    height: 15px;
+    display: inline-grid;
+    place-content: center;
+    background: #1182BC;
+    color: #fff;
+    padding: 2px;
+    border-radius: 50%;
+    counter-increment: report;
+    content: counter(report);
 }

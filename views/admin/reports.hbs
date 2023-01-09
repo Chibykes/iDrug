@@ -1,0 +1,60 @@
+<main class="position-relative no-before">
+    <div class="wrapper row col-lg-10 mx-auto pt-4 position-relative">
+        
+        {{> sidebar}}
+
+        <div class="main-page col-lg-7 mx-auto">
+
+            <div class="header d-flex align-items-center justify-content-between">
+                <button class="p-2">
+                    <i class="fa fa-align-left" aria-hidden="true"></i>
+                </button>
+                
+                <form class="searchbar d-flex w-100 mx-4 px-2 rounded-1" action="">
+                    <input 
+                        type="text"
+                        placeholder="Search"
+                        class="w-100"
+                    >
+                    <button class="p-2">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+
+                <i class="fa fa-bell" aria-hidden="true"></i>
+                <div class="px-3">
+                    <div class="acct-img rounded-circle shadow-lg" style="width: 40px; height: 40px; overflow: hidden;">
+                        <img src="/img/footer-advertising@2x.jpg" style="width: 100%; height: 100%;" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="content py-5">
+
+                <div class="table reports shadow-lg mb-5"> 
+                    {{#each reports}}
+                        <div style="background: white; padding: 20px;">
+                            <p class="sn"></p>
+                            <p style="font-size: xx-large">{{this.name}}</p>
+                            <p class="py-1 m-0"><span style="padding: 0; color: #1183bc">By:</span> {{this.pharmacy}}</p>
+                            <p class="py-1 m-0"><span style="padding: 0; color: #1183bc">Batch No:</span> {{this.batchNo}}</p>
+                            <p class="py-1 m-0"><span style="padding: 0; color: #1183bc">Issue:</span> <br /> {{this.issue}}</p>
+                        </div>
+                    {{/each}}
+                </div>
+
+            </div>
+
+            
+            <footer class="text-center" style="color: #aaa;">
+                <p>
+                    <strong>&copy; 2021 iDrug</strong>
+                </p>
+            </footer>
+            
+        </div>
+
+    </div>
+
+    
+</main>

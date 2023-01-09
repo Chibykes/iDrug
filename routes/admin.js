@@ -5,6 +5,7 @@ const Drugs = require('../models/Drugs');
 const genIDs = require('../utils/genIDs');
 const fs = require('fs');
 const path = require('path');
+const Reports = require('../models/Reports');
 
 
 app.get('/', (req, res)=>{
@@ -53,6 +54,15 @@ app.get('/pharmacies', (req, res)=>{
     res.render('admin/pharmacies', {
        title: 'Pharmacies',
        logo2: true,
+    });
+});
+
+app.get('/reports', async(req, res)=>{
+    const reports = await Reports.find({ }).sort({'createdAt': -1}).limit(20);
+    res.render('admin/reports', {
+       title: 'Reports',
+       logo2: true,
+       reports
     });
 });
 
